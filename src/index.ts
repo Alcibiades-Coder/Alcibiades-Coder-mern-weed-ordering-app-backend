@@ -4,6 +4,10 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import myUserRoute from "./routes/MyUserRoute";
 
+const allowedOrigins = [
+  "https://alcibiades-coder-mern-weed-ordering-app-3idp.onrender.com",
+]; // Add your allowed origins here
+
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
   .then(() => console.log("Connected to MongoDB"));
@@ -12,7 +16,8 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    methods: ["GET", "POST", "PUT"],
+    origin: allowedOrigins, // Solo permite solicitudes desde el frontend en Render
+    credentials: true,
   })
 );
 
