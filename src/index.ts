@@ -5,10 +5,7 @@ import mongoose from "mongoose";
 import myUserRoute from "./routes/MyUserRoute";
 import { v2 as cloudinary } from "cloudinary";
 
-const allowedOrigins = [
-  "https://alcibiades-coder-mern-weed-ordering-app-3idp.onrender.com",
-  "https://alcibiades-coder-mern-weed-ordering-app.onrender.com/api/my/user",
-]; // Add your allowed origins here
+const allowedOrigins = [process.env.API_BASE_URL, process.env.API_USER_URL];
 
 mongoose
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
