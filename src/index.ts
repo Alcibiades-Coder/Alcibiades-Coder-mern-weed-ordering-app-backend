@@ -6,6 +6,7 @@ import myUserRoute from "./routes/MyUserRoute";
 
 const allowedOrigins = [
   "https://alcibiades-coder-mern-weed-ordering-app-3idp.onrender.com",
+  "https://alcibiades-coder-mern-weed-ordering-app.onrender.com/api/my/user",
 ]; // Add your allowed origins here
 
 mongoose
